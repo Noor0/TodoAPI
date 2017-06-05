@@ -1,9 +1,15 @@
 let Sequelize = require("sequelize");
 
-let sequelize = new Sequelize(undefined, undefined, undefined,{
-	dialect:"sqlite",
-	storage: "./data/database.sqlite"
-});
+let sequelize;
+if(process.env.NODE_ENV === "production")	
+	sequelize = new Sequelize(process.env.DATABASE_URL,{
+		dialect:"postgresql"
+	});
+else
+	sequelize = new Sequelize(undefined, undefined, undefined,{
+		dialect:"sqlite",
+		storage: "./data/database.sqlite"
+	});
 
 module.exports = {
 	Todo: sequelize.import("./models/todo.js"),
