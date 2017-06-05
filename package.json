@@ -14,28 +14,10 @@
   },
   "scripts": {
     "test": "echo test",
-    "watch": "watch-run -p \"mid.js\" npm run build",
-    "start": "nodemon compiled-mid.js",
-    "build": "babel mid.js --out-file compiled-mid.js",
-    "oldway": "nodemon mid.js --exec babel-node"
   },
-  "name": "node-practise",
+  "name": "todo-api",
   "version": "1.0.0",
-  "main": "get-server.js",
-  "devDependencies": {
-    "babel-cli": "^6.23.0",
-    "babel-core": "^6.23.1",
-    "babel-eslint": "^7.2.3",
-    "babel-preset-es2015": "^6.22.0",
-    "babel-preset-node6": "^11.0.0",
-    "babel-preset-stage-2": "^6.22.0",
-    "chai": "^3.5.0",
-    "eslint": "^3.19.0",
-    "eslint-config-airbnb-base": "^11.2.0",
-    "eslint-plugin-import": "^2.3.0",
-    "mocha": "^3.2.0",
-    "watch": "^1.0.0"
-  },
+  "main": "server.js",
   "author": "Noor ul haq",
   "license": "ISC",
   "description": ""
