@@ -6,7 +6,7 @@ let bodyParser = require("body-parser");
 const port = process.env.PORT || 3000;
 
 sequelize.sync().then(()=>{
-	console.log("connected to database ssda");
+	console.log("connected to database");
 	console.log(process.env.PORT);
 });
 
@@ -27,15 +27,28 @@ app.post("/todo", urlencoded, (req, res)=>{
 });
 
 app.post("/update/todo", urlencoded, (req, res)=>{
-	Todo.update({
-		status: req.body.status == "true"
-	}, {
-		where: {
-			id: {
-				$eq: req.body.id
+	let prom;
+
+	if(req.body.description)
+		prom = Todo.update({
+			description: req.body.description
+		}, {
+			where: {
+				id: {	$eq: req.body.id }
 			}
-		}
-	}).then( todo => {
+		});
+	else if(req.body.status)
+		prom = Todo.update({
+			status: req.body.status == "true"
+		}, {
+			where: {
+				id: {	$eq: req.body.id }
+			}
+		});
+	else
+		res.sendStatus(404);
+
+	prom.then( todo => {
 		res.status(200).json( todo.toJSON() );
 	}).catch( (err) => {
 		res.status(404).send(err);
