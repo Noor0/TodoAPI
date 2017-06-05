@@ -6,7 +6,8 @@ let bodyParser = require("body-parser");
 const port = process.env.PORT || 3000;
 
 sequelize.sync().then(()=>{
-	console.log("connected to database");
+	console.log("connected to database ");
+	console.log(process.env.PORT);
 });
 
 let urlencoded = bodyParser.urlencoded({extended: false});
