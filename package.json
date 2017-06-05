@@ -14,7 +14,7 @@
   },
   "scripts": {
     "test": "echo test",
-    "start": "node server.js",
+    "start": "node server.js"
   },
   "name": "node-practise",
   "version": "1.0.0",
