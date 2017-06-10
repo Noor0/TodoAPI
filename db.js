@@ -1,5 +1,6 @@
 let Sequelize = require("sequelize");
 
+
 let sequelize;
 if(process.env.NODE_ENV === "production")	
 	sequelize = new Sequelize(process.env.DATABASE_URL,{
@@ -11,8 +12,18 @@ else
 		storage: "./data/database.sqlite"
 	});
 
+let Todo = sequelize.import("./models/todo.js");
+let User = sequelize.import("./models/user.js");
+let Token = sequelize.import("./models/token.js");
+
+// DEFINING ASSOCIATIONS
+User.hasMany(Todo);
+User.hasMany(Token);
+
 module.exports = {
-	Todo: sequelize.import("./models/todo.js"),
+	Todo,
+	User,
+	Token,
 	Sequelize,
 	sequelize
 };
