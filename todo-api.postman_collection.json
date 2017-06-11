@@ -1,0 +1,440 @@
+{
+	"variables": [],
+	"info": {
+		"name": "todo-api",
+		"_postman_id": "ae0286e0-4c7c-ff76-b9b3-033ac0bc0249",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "{{url}}todo",
+			"request": {
+				"url": "{{url}}/todo",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{tok1}}",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{user2}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "description",
+							"value": "learn websocket",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}todo/",
+			"request": {
+				"url": "{{url}}/todo/",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{user2}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id",
+							"value": "{\"ids\":[6]}",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}todos",
+			"request": {
+				"url": "{{url}}/todos",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{tok1}}",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{user2}}",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/update/todo",
+			"request": {
+				"url": "{{url}}/update/todo",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{user2}}",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{tok1}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "description",
+							"value": "have fun and travel the world",
+							"description": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "id",
+							"value": "5",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "true",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "false",
+							"description": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}todos?status=true",
+			"request": {
+				"url": {
+					"raw": "{{url}}/todos?status=true",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"todos"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "true",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{tok1}}",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{user2}}",
+						"description": "",
+						"disabled": true
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}todos?substr=finish",
+			"request": {
+				"url": {
+					"raw": "{{url}}/todos?substr=finish",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"todos"
+					],
+					"query": [
+						{
+							"key": "substr",
+							"value": "finish",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{tok1}}",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{user2}}",
+						"description": "",
+						"disabled": true
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}todos?status=false",
+			"request": {
+				"url": {
+					"raw": "{{url}}/todos?status=false",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"todos"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "false",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{tok1}}",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{user2}}",
+						"description": "",
+						"disabled": true
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}todo-count",
+			"request": {
+				"url": "{{url}}/todo-count",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}todo/9",
+			"request": {
+				"url": "{{url}}/todo/2",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{tok1}}",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/user/signup",
+			"request": {
+				"url": "{{url}}/user/signup",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "password",
+							"value": "abcdefg",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "sOMething222@gmail.com",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/user/login",
+			"request": {
+				"url": "{{url}}/user/login",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "something456@gmail.com",
+							"description": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "abcdefg",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "something222@gmail.com",
+							"description": ""
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/user/logout",
+			"request": {
+				"url": "{{url}}/user/logout",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{user2}}",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{tok1}}",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/user/verify",
+			"request": {
+				"url": "{{url}}/user/verify",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer say\"what\"ssdsaeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiVTJGc2RHVmtYMS9TNTZxY3NrZnRMYzNxNmxlYkliVlc5QVczelBNOExtWktOQWl3WWpxSWU3cVV2aTdFRE11RHg4UWR1clBac0pNVys4TjFpNENPcGc9PSIsImlhdCI6MTQ5NzAzNDcyOH0.jwu5-Al_RjEiUvALWv_wVkAWWrgDMyz1VNbNkhmCKZE",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{user2}}",
+						"description": "",
+						"disabled": true
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/users",
+			"request": {
+				"url": "{{url}}/users",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{tok1}}",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
