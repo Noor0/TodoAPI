@@ -11,6 +11,7 @@ const port = process.env.PORT || 3000;
 
 sequelize.sync().then(()=>{
 	console.log(colors.red("connected to database"));
+	app.listen(port);
 });
 
 let urlencoded = bodyParser.urlencoded({extended: false});
@@ -261,5 +262,3 @@ app.get("/todo-count", (req, res)=>{
 /*
 **************************END OF TODO ROUTES**************************
 */
-
-app.listen(port);
